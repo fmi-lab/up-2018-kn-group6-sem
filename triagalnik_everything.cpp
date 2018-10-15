@@ -40,5 +40,21 @@ int main()
     lc = sqrt(a*b - a*b*c*c/pow(a+b, 2));
 
     cout<<"la = "<<la<<"\nlb = "<<lb<<"\nlc = "<<lc<<endl;
+
+    double p, S;
+
+    p = (a + b + c) / 2;
+
+    S = sqrt(p * (p-a) * (p-b) * (p-c));
+
+    cout<<"p = "<<p<<endl;
+    cout<<"S = "<<S<<endl;
+
+    ha = 2*S / a;
+    hb = 2*S / b;
+    hc = 2*S / c;
+
+    cout<<"ha = "<<ha<<"\nhb = "<<hb<<"\nhc = "<<hc<<endl;
+
     return 0;
 }
