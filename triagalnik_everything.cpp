@@ -50,11 +50,22 @@ int main()
     cout<<"p = "<<p<<endl;
     cout<<"S = "<<S<<endl;
 
+    double ha, hb, hc;
+
     ha = 2*S / a;
     hb = 2*S / b;
     hc = 2*S / c;
 
     cout<<"ha = "<<ha<<"\nhb = "<<hb<<"\nhc = "<<hc<<endl;
+
+    double alpha, beta, gamma;
+    const double PI = 3.14159265;
+
+    alpha = asin(hc/b) * 180/PI;
+    beta = asin(ha/c) * 180/PI;
+    gamma = asin(hb/a) * 180/PI;
+
+    cout <<"alpha = "<<alpha<<"\nbeta = "<<beta<<"\ngamma = "<<gamma<<endl;
 
     return 0;
 }
