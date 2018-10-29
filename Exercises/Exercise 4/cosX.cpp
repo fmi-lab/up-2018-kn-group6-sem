@@ -10,9 +10,9 @@ int main()
     double chislitel = 1;
     double znamenatel = 1;
     double cosX = 0;
-    int sign = -1;
+    int sign = 1;
     int n = 1;
-    double eps = 0.0001;
+    double eps = 0.0000000000001;
 
     while(fabs(chislitel / znamenatel) > eps)
     {
@@ -23,7 +23,7 @@ int main()
 //        cout <<"znamenatel = "<<znamenatel<<endl;
         sign = -sign;
         cosX = chislitel / znamenatel;
-        cout << std::fixed<<"cosX = "<<cosX<<endl;
+        cout <<"cosX = "<<cosX<<endl;
 //        cout<<"*********************************\n";
         n++;
     }

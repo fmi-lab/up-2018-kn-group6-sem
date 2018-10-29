@@ -11,7 +11,7 @@ int main()
     double chislitel = 1;
     double znamenatel = 1;
     int sign = 1;
-    double eps = 0.000001;
+    double eps = 0.000000000000001;
 
     /// на първата стъпка (когато n=0) трябва да дефинираме 0!, затова просто казваме,
     /// че знаменателят е равен на 1 и пресмятаме стойността на числителя.
@@ -19,6 +19,7 @@ int main()
     while (fabs(chislitel / znamenatel) > eps)
     {
         cosX += sign*chislitel/znamenatel;
+            cout << "cos(x) = "<<cosX<<endl;
         chislitel *= x*x;
         znamenatel *= (2*n-1)*2*n; /// много бързо числителят и знаменателят започват да приемат
                                    /// големи стойности и понякога може да излязат от
