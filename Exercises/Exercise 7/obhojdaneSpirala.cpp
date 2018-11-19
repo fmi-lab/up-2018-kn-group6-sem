@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-    int matrix[5][5];
-    int sizeX = 5, sizeY = 5;
+    int matrix[4][7];
+    int sizeX = 4, sizeY = 7;
     int maxBot = sizeX - 1;
     int maxRight = sizeY - 1;
     int maxTop = 0;
@@ -36,7 +36,7 @@ int main()
 
     cout<<matrix[x][y]<<' ';
 
-    while(maxRight != maxLeft || maxTop != maxBot)
+    while(maxRight != maxLeft - 1 && maxTop - 1 != maxBot)
     {
 
         if(y == maxLeft)
@@ -82,8 +82,6 @@ int main()
         }
     }
 
-    cout<<matrix[maxTop][maxLeft];
 
-
-
+    return 0;
 }
