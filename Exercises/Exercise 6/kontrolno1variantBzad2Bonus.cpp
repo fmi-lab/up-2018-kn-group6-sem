@@ -11,24 +11,25 @@ int main()
     cin >> N;
     int currentSum = 0, currentNumber, counter = 0;
     int arr[99999];
+    bool flag = false;
 
     for (int i = 0; i<N; i++)
     {
         cin>>arr[i];
-        for(int j = i-2; j>=0; j--)
+        currentSum = arr[i-1];
+        for(int j = i-2; j>=0  && !flag; j--)
         {
             currentSum += arr[j];
             if(arr[i] == currentSum)
             {
                 counter++;
-                break;
+                flag = true;
             }
         }
-        currentSum = 0;
+        flag = false;
     }
 
     cout<<"counter = "<<counter<<endl;
 
     return 0;
 }
-
