@@ -40,10 +40,11 @@ double sinX(double x){
 
 double sinX2(double x, double fact, double pow, int sign, double last, int n){
     double current = sign*pow/fact;
-    if(fabs(current - last) < 0.00005){
+    cout<<"fabs = "<<fabs(current - last)<<endl;
+    if(fabs(current - last) > 0.00005){
         cout<<"fact = "<<fact*2*n*2*(n+1)<<endl;
         n++;
-    last = sign*pow/fact;
+        last = sign*pow/fact;
         return sign*pow/fact + sinX2(x, fact*2*n*2*(n+1),pow*x*x, -sign, last, n);
     } else {
         return 0;
@@ -51,7 +52,7 @@ double sinX2(double x, double fact, double pow, int sign, double last, int n){
 }
 
 double sinX2(double x){
-    return sinX2(x, 1, x, 1, x, 0);
+    return sinX2(x, 1, x, 1, 0, 0);
 }
 
 int main(){
