@@ -3,9 +3,9 @@
 #include<iostream>
 
 // A utility function to swap two elements
-void swap(int& a, int& b)
+void swap(double& a, double& b)
 {
-    int t = a;
+    double t = a;
     a = b;
     b = t;
 }
@@ -15,9 +15,9 @@ void swap(int& a, int& b)
     array, and places all smaller (smaller than pivot)
    to left of pivot and all greater elements to right
    of pivot */
-int partition (int arr[], int low, int high)
+int partition2 (double arr[], int low, int high)
 {
-    int pivot = arr[high];    // pivot
+    double pivot = arr[high];    // pivot
     int i = (low - 1);  // Index of smaller element
 
     for (int j = low; j < high; j++)
@@ -38,13 +38,13 @@ int partition (int arr[], int low, int high)
  arr[] --> Array to be sorted,
   low  --> Starting index,
   high  --> Ending index */
-void quickSort(int arr[], int low, int high)
+void quickSort(double arr[], int low, int high)
 {
     if (low < high)
     {
         /* pi is partitioning index, arr[pi] is now
            at right place */
-        int pi = partition(arr, low, high);
+        int pi = partition2(arr, low, high);
 
         // Separately sort elements before
         // partition and after partition
@@ -54,11 +54,11 @@ void quickSort(int arr[], int low, int high)
 }
 
 /* Function to print an array */
-void printArray(int arr[], int size)
+void printArray(double arr[], int size)
 {
     int i;
     for (i=0; i < size; i++)
-        printf("%d ", arr[i]);
+        printf("%f, ", arr[i]);
     printf("\n");
 }
 
@@ -66,10 +66,12 @@ void printArray(int arr[], int size)
 int main()
 {
     int arr[] = {10, 7, 8, 9, 1, 5,43,65234,1,-543,123,-32,0,213,0};
+
+    double arr1[] = {450, 52.7, 0, -65, 3.9, -75.9, 24, 64, 0.5, -23};
 //    int arr[] = {10,9,8,7,6,5,4,3,2,1};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    quickSort(arr, 0, n-1);
+    int n = sizeof(arr1)/sizeof(arr1[0]);
+    quickSort(arr1, 0, n-1);
     printf("Sorted array: \n");
-    printArray(arr, n);
+    printArray(arr1, n);
     return 0;
 }
