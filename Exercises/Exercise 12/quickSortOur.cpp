@@ -7,7 +7,7 @@ void swap2(double& x, double& y){
     y = z;
 }
 
-int partition2(double* arr, unsigned int lo, unsigned int hi){
+int partition2(double* arr, int lo, int hi){
     int i = lo - 1;
     double pivot = arr[hi];
     for(int j = lo; j<hi; j++){
@@ -22,7 +22,7 @@ int partition2(double* arr, unsigned int lo, unsigned int hi){
     return i+1;
 }
 
-void quickSort(double* arr, unsigned int lo, unsigned int hi){
+void quickSort(double* arr, int lo, int hi){
     if(lo<hi){
         int sorted = partition2(arr, lo, hi);
     cout<<"lo = "<<lo<<" hi = "<<hi<<" sorted element = "<< arr[sorted]<<endl;
